@@ -22,7 +22,7 @@
 
 **1.  安装和配置 Java SDK**
 
-Android Studio 在编译当前项目时使用的 JDK 目录
+Android Studio安装后已经内置了 Java 运行时环境，Android Studio在编译当前项目时使用的 JDK 目录
 
 ![](./img/jdk.PNG)
 
