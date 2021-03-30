@@ -6,20 +6,19 @@
 
 # 实验一：OpenWrt 虚拟机搭建
 
-[实验一：OpenWrt 虚拟机搭建](#实验一：OpenWrt 虚拟机搭建)
+实验概要
 
 -  [实验目的](#实验目的)
-
-  - [实验环境](#实验环境)
+- [实验环境](#实验环境)
   - [实验要求](#实验要求)
   - [实验过程](#实验过程)
       - [复习VirtualBox的配置与使用](#复习VirtualBox的配置与使用)
-      - [OpenWrt on VirtualBox](#OpenWrt on VirtualBox)
+      - [OpenWrt-on-VirtualBox](#OpenWrt on VirtualBox)
           - [手动安装步骤](#手动安装步骤)
           - [脚本自动安装步骤](#脚本自动安装步骤)
               - [在主机Win10上运行脚本](#在主机Win10上运行脚本)
               - [在virtualbox中运行脚本](#在virtualbox中运行脚本)
-      - [开启 AP 功能](#开启 AP 功能)
+      - [开启AP功能](#开启 AP 功能)
       - [无线路由器/无线接入点（AP）配置](#无线路由器/无线接入点（AP）配置)
       - [使用手机连接不同配置状态下的AP对比实验](#使用手机连接不同配置状态下的AP对比实验)
       - [使用路由器/AP的配置导出备份功能，尝试解码导出的配置文件](#使用路由器/AP的配置导出备份功能，尝试解码导出的配置文件)
@@ -84,7 +83,7 @@
 
   ![](./img/网络配置.png)
 
-### OpenWrt on VirtualBox
+### OpenWrt-on-VirtualBox
 
 #### 手动安装步骤
 
@@ -318,7 +317,7 @@ PS:
 
 ![](./img/vboxerror2.PNG)
 
-### 开启 AP 功能
+### 开启AP功能
 
 
 
@@ -405,7 +404,7 @@ opkg install hostapd wpa-supplicant
 
 - 设置SSID广播和非广播模式
 
-  ![](./IMG/hideESSID.PNG)
+  ![](./img/hideESSID.PNG)
 
 - 配置不同的加密方式
 
