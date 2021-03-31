@@ -307,15 +307,15 @@ PS:
 
 ##### 在virtualbox中运行脚本
 
+将[脚本](./code/setup-vm-vir.sh)修改了一部分，使能够在kali上自动安装OpenWrt
+
+![](./img/虚拟机中脚本执行.PNG)
+
+成功启动界面如下
+
+![](./img/虚拟机启动虚拟机.PNG)
 
 
-执行脚本后，开机报错
-
-![](./img/vbox执行脚本.PNG)
-
-由于感觉不是脚本本身的问题，于是新建了一个虚拟机，按正常操作创建，打开后和上图报相同的错误，故在虚拟机中装虚拟机（套娃）失败
-
-![](./img/vboxerror2.PNG)
 
 ### 开启AP功能
 
@@ -452,21 +452,17 @@ opkg install hostapd wpa-supplicant
 
 ### 使用手机连接不同配置状态下的AP对比实验
 
-由于openwrt可以正常连接但是无法上网的问题，该部分可做操作实在有限QAQ，问题尚未解决
-
-- 配置不同的加密方式
-
-  **无加密**
-
-  ![](./img/无加密.jpg)
-
-  **WPA-PSK/WPA2-PSK Mixed Mode(medium secuity)方式加密**
-
-  将无线网络改成加密模式后，**无法接入网络**，显示**已停用/网络拒绝接入**
-
-  ![](./img/WPA加密.jpg)
 
 
+#### 使用不同加密模式
+
+**无加密**
+
+![](./img/未加密模式.jpg)
+
+**WPA-PSK/WPA2-PSK Mixed Mode(medium secuity)方式加密**
+
+![](./img/已连接.jpg)
 
 ### 使用路由器或AP的配置导出备份功能并尝试解码导出的配置文件
 
@@ -498,17 +494,41 @@ opkg install hostapd wpa-supplicant
 
    - 在wget后面加上`--no-check-certificate`，但是存在很大的安全隐患！
 
-4. **在虚拟机中装虚拟机会报错（未解决）**
+4. **在虚拟机中装虚拟机会报错（已解决）**
 
-   我就是试一试这种套娃行为，请问老师/师姐，是不可以虚拟机中装虚拟机吗？
+   问题得以解决多亏[吕九洋大佬](https://github.com/LyuLumos)的帮助，在此表示疯狂感谢！！谢谢吕大佬！！
 
    
 
-   该虚拟机配置如下
+   首先虚拟机中可以安装虚拟机
 
-   ![](./img/kali内无法安装.PNG)
+- 报错`VT-x is not avaiable`，没有开启虚拟化引擎
 
-5. **可以正常接入openwrt但是无法上网（未解决）**
+  ![](./img/vbox执行脚本.PNG)
+
+  - 解决方法：
+
+    对`2021-test`的虚拟机进行虚拟化配置，执行`VBoxManage.exe modifyvm "2021-test" --nested-hw-virt on`
+
+    ![](./img/开启虚拟化.PNG)
+
+  
+
+5. **可以正常接入openwrt但是无法上网（已解决）**
+
+   openwrt可以正常连接但是无法上网时
+
+   - 配置不同的加密方式
+
+     **无加密**
+
+     ![](./img/无加密.jpg)
+
+     **WPA-PSK/WPA2-PSK Mixed Mode(medium secuity)方式加密**
+
+     将无线网络改成加密模式后，**无法接入网络**，显示**已停用/网络拒绝接入**
+
+     ![](./img/WPA加密.jpg)
 
 - 可以正常ping通网络
 
@@ -528,7 +548,9 @@ opkg install hostapd wpa-supplicant
 
 - 结果如[使用手机连接不同配置状态下的AP对比实验](#使用手机连接不同配置状态下的AP对比实验)所示
 
-- 请问老师/师姐，无法上网的原因是因为网卡的问题还是某些文件配置的问题？😅
+  解决方法：在又一次插拔网卡的时候，竟然发现网卡可以正常连接，可能是网卡太烫的时候会出现各种问题，此处只想引用黄大的一句话：**毕竟便宜的无线网卡**
+
+
 
 ## **参考资料**
 
@@ -539,6 +561,8 @@ opkg install hostapd wpa-supplicant
 [wps-on-off-in-luci](https://forum.openwrt.org/t/wps-on-off-in-luci/1046)
 
 [wget获取https地址报错 --no-check-certificate](https://blog.csdn.net/u010073893/article/details/50895851?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control&dist_request_id=&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromMachineLearnPai2%7Edefault-1.control)
+
+[在VirtualBox 6.1里面打开嵌套 VT-x/AMD-V 功能](https://blog.csdn.net/holderlinzhang/article/details/104260531)
 
 
 
