@@ -496,7 +496,7 @@ opkg install hostapd wpa-supplicant
 
 4. **在虚拟机中装虚拟机会报错（已解决）**
 
-   问题得以解决多亏[吕九洋大佬](https://github.com/LyuLumos)的帮助，在此表示疯狂感谢！！谢谢吕大佬！！
+   问题得以解决多亏[LyuLumos](https://github.com/LyuLumos)的帮助，在此表示疯狂感谢！！谢谢大佬！！
 
    
 
