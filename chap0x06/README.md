@@ -40,7 +40,7 @@ cat /data/system/users/userlist.xml
 cat /sys/class/net/wlan0/address
 ```
 
-![](/img/adb.PNG)
+![](./img/adb.PNG)
 
 ```bash
 # 将文件复制到设备/从设备复制文件
