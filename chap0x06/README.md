@@ -251,7 +251,7 @@ android:id="@+id/activity_display_message">
 
 SharedPreferences以xml的形式保存在` data/data/包名/shared_prefs`这个目录下
 
-**MODE_PRIVATE:**该模式下，创建的文件只能被本应用访问，进行读、写操作
+**MODE_PRIVATE:** 该模式下，创建的文件只能被本应用访问，进行读、写操作
 
 **MODE_APPEND:** 模式会检查文件是否存在，存在就往文件追加内容，否则就创建新文件
 
