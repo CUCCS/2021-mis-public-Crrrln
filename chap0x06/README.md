@@ -82,6 +82,7 @@ adb shell am start -a android.intent.action.CALL -d tel:10086
 
 # 发短信：
 adb shell am start -a android.intent.action.SENDTO -d sms:10086 --es sms_body HaveFun! --ez exit_on_sent true
+
 ```
 
 ![](./img/adb.gif)
