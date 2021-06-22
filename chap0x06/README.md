@@ -234,31 +234,31 @@ android:id="@+id/activity_display_message">
 
 ### 回答问题
 
-**DisplayMessageActivity.java中的2行打印日志语句是否有风险？如果有风险，请给出漏洞利用示范。如果没有风险，请给出理由。**
+- **DisplayMessageActivity.java中的2行打印日志语句是否有风险？如果有风险，请给出漏洞利用示范。如果没有风险，请给出理由。**
 
-![](./img/user.PNG)
+  ![](./img/user.PNG)
 
-![](./img/secret.PNG)
+  ![](./img/secret.PNG)
 
-有风险
+  有风险
 
-日志打印输入的明文，容易被获取正确的信息
+  日志打印输入的明文，容易被获取正确的信息
 
-代码注入，`LogCat` 查看程序执行到特定点时的（变量和关键数据结构）状态数据，在解密程序数据时经常使用 【[参考第七章教材](https://c4pr1c3.github.io/cuc-mis/chap0x07/main.html#%E4%BB%A3%E7%A0%81%E6%B3%A8%E2%BC%8A%E6%B3%95%EF%BC%88%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95%E5%92%8C%E5%88%86%E6%9E%90%EF%BC%89)】
+  代码注入，`LogCat` 查看程序执行到特定点时的（变量和关键数据结构）状态数据，在解密程序数据时经常使用 【[参考第七章教材](https://c4pr1c3.github.io/cuc-mis/chap0x07/main.html#%E4%BB%A3%E7%A0%81%E6%B3%A8%E2%BC%8A%E6%B3%95%EF%BC%88%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95%E5%92%8C%E5%88%86%E6%9E%90%EF%BC%89)】
 
 
 
-**SharedPreferences类在进行读写操作时设置的`Context.MODE_PRIVATE`参数有何作用和意义？还有其他可选参数取值吗？**
+- **SharedPreferences类在进行读写操作时设置的`Context.MODE_PRIVATE`参数有何作用和意义？还有其他可选参数取值吗？**
 
-SharedPreferences以xml的形式保存在` data/data/包名/shared_prefs`这个目录下
+  SharedPreferences以xml的形式保存在` data/data/包名/shared_prefs`这个目录下
 
-**MODE_PRIVATE:** 该模式下，创建的文件只能被本应用访问，进行读、写操作
+  - **MODE_PRIVATE:** 该模式下，创建的文件只能被本应用访问，进行读、写操作
 
-**MODE_APPEND:** 模式会检查文件是否存在，存在就往文件追加内容，否则就创建新文件
+  - **MODE_APPEND:** 模式会检查文件是否存在，存在就往文件追加内容，否则就创建新文件
 
-**MODE_WORLD_READABLE:** 表示当前文件可以被其他应用读取
+  - **MODE_WORLD_READABLE:** 表示当前文件可以被其他应用读取
 
-**MODE_WORLD_WRITEABLE:** 表示当前文件可以被其他应用写入
+  - **MODE_WORLD_WRITEABLE:** 表示当前文件可以被其他应用写入
 
 ## **问题与解决方法**
 
