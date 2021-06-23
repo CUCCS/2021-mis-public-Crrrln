@@ -248,21 +248,28 @@ adb install F:\DVAHW\app\release\app-release\dist\app-release-signed.apk
 
   - 卸载之前安装过的包即可
 
-  ```cmd
-  adb shell pm uninstall cn.edu.cuc.misdemo
-  ```
+    ```cmd
+    adb shell pm uninstall cn.edu.cuc.misdemo
+    ```
+
+    
 
 - build过程中lint报错![](./img/lint报错.png)
 
   解决方法：
 
-  - ```java
-    # 在build.gradle(Module: DVAHW.app)文件的android {}里添加
+  - 在build.gradle(Module: DVAHW.app)文件的android {}里添加
+
+    ```java
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
     ```
+
+    
+
+  
 
 - 在生成apk文件时，无法创建.jks文件
 
